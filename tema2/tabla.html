@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla_Bilal</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .amarilla {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<bodys>
+    <script>
+        var fil = parseInt(prompt("Introduzca el número de filas: "))
+        var col = parseInt(prompt("Introduzca el número de columnas: "))
+        dibujaTabla(fil, col);
+
+        function dibujaTabla(filas, columnas) {
+            document.write("<table>");
+            var index = 1;
+            for (let i = 0; i < filas; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < columnas; j++) {
+                    index++;
+                    if (verificaPrimo(index))
+                        document.write("<td id='index_primo" + index + "'>" + index + "</td>");
+                    else
+                        document.write("<td>" + index + "</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+
+            for (let i = 0; i < fil * col; i++) {
+                if (verificaPrimo(i)) {
+                    document.getElementById("index_primo" + i).className = "amarilla";
+                }
+            }
+        }
+
+        
+        function verificaPrimo(numero) {
+            for (let i = 1; i < numero; i++) {
+                i++
+                return numero == 2 || numero % i != 0
+            }
+        }
+    </script>
+    </body>
+
+</html>

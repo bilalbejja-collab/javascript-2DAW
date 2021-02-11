@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plantillaej03</title>
+
+    <style>
+        div#capa {
+            border: 1px solid #666;
+            padding: 10px;
+            margin: 10px 100px;
+            background-color: beige;
+            opacity: 0.8;
+            float: left;
+            width: 300px;
+        }
+
+        div#contenedor {
+            margin: 0 auto;
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="capa">
+            <form name="formulario">
+                <textarea name="" id="texto" cols="30" rows="10"></textarea>
+                <input type="button" value="Ver palabras" id="mostrar"><br> <br>
+                <input type="checkbox" id="seleccionar">Seleccionar Todos
+                <input type="checkbox" id="deseleccionar">Deseleccionar Todos
+
+                <div id="elementos"></div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Asignar eventos 
+    document.getElementById('mostrar').addEventListener('click', mostrarPalabras, false);
+    document.getElementById('seleccionar').addEventListener('click', seleccionarTodos, false);
+    document.getElementById('deseleccionar').addEventListener('click', deseleccionarTodos, false);
+
+    //Muestra los nuevos con las palabras del texto 
+    function mostrarPalabras() {
+        //Obtener las palabras 
+        var texto = document.getElementById('texto').value;
+        var palabras = texto.split(" ");
+
+        var palabras_new = new Array();
+
+        //Evitar espacios en blanco 
+        palabras.forEach(p => {
+            if (p !== "") {
+                palabras_new.push(p);
+            }
+        });
+
+        var elementos = document.getElementById('elementos');
+
+        //Crear nuevos elementos inputs con las palabras obtenidas  
+        var i = 0;
+        palabras_new.forEach(elemento => {
+            if (document.getElementById(elemento) == null) {
+                elementos.innerHTML += "<input type='checkbox' name='item' id='" + elemento + i + "'>" + elemento + "<br>";
+            }
+            i++;
+        }); 
+    }
+
+    //Selecciona todos los checkboxs
+    function seleccionarTodos() {
+        var inputs = document.getElementsByName('item');
+        //ir seleccionando los checkboxes
+        inputs.forEach(element => {
+            element.checked = true;
+        });
+        document.getElementById('deseleccionar').checked = false;
+    }
+
+    //Deselecciona todos los checkboxs
+    function deseleccionarTodos() {
+        var inputs = document.getElementsByName('item');
+        //ir deseleccionando los checkboxes
+        inputs.forEach(element => {
+            element.checked = false;
+        });
+        document.getElementById('seleccionar').checked = false;
+    }
+</script>
+
+</html>

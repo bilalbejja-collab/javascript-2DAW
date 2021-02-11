@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_39</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var numero = parseInt(prompt("Numero: "));
+
+        function esPerfecto(numero) {
+            var divisores = new Array();
+
+            for (let i = 1; i < numero; i++) {
+                if (numero % i == 0) {
+                    divisores.push(i);
+                }
+            }
+
+            var sum = divisores.reduce(function (a, b) {
+                return a + b;
+            }, 0);
+
+            if (numero == sum)
+                document.write(numero + " es PERFECTO");
+            else
+                document.write(numero + " no es PERFECTO");
+        }
+
+        esPerfecto(numero);
+    </script>
+</body>
+
+</html>

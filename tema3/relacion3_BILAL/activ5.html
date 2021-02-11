@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad-5</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Bilal:Bejja:636542217:bilalbejja2016@gmail.com:04620
+
+        var cadena = prompt("Dame cadena: ");
+        if (cadena.length > 0) {
+            var campos = cadena.split(":");
+            var servidor = campos[3].split("@")[1];
+        }else{
+            alert("La cadena no puede estar vacía !!!");
+        }
+
+        document.write("Código postal: " + campos[4] + "<br>");
+        document.write("Apellidos: " + campos[1] + "<br>");
+        document.write("Email: " + campos[3] + "<br>");
+        document.write("Servidor: " + servidor + "<br>");
+    </script>
+</body>
+
+</html>

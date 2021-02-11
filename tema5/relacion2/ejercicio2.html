@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ejercicio 2. Frases aleatorias</title>
+	<script src="citas.js"></script>
+	<script>
+		function aleatorio(inferior, superior) {
+			var posibilidades = (superior - inferior + 1) + inferior;
+			var aleatorio = Math.floor(Math.random() * posibilidades);
+			return aleatorio;
+		}
+
+		window.onload = function banner() {
+			document.getElementById("frase").innerHTML = frases[aleatorio(0, frases.length - 1)];
+		}
+	</script>
+	<style>
+		div#contenedor {
+			width: 620px;
+			background: azure;
+			border: 1px solid gold;
+			margin: 0 auto;
+			padding: 30px 50px;
+		}
+
+		div#frase {
+			font-size: 1em;
+			border: 1px solid #666;
+			border-radius: 5px;
+			margin: 5px;
+			padding: 3px;
+			color: blueviolet;
+		}
+
+		.clearfix {
+			overflow: auto;
+		}
+
+		div.seleccionado {
+			border: 1px solid yellow;
+			background-color: deepskyblue;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor" class="clearfix">
+		<h1>Frase del día</h1>
+		<div id="frase"></div>
+	</div>
+</body>
+
+</html>

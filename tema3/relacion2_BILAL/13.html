@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio13</title> 
+</head>
+
+<body>
+    <script>
+        let ventana = window.open("13.html", "nueva_ventana", "height=500,width=500");
+        document.body.innerHTML = ventana;
+
+        var txt = "";
+        txt += "<b>Información sobre la página: </b>";
+        txt += "<p>Location: " + window.location.href + "</p>";
+        txt += "<p>Hostname: " + window.location.hostname + "</p>";
+        txt += "<p>Pathname: " + window.location.pathname + "</p>";
+        txt += "<p>Protocol: " + window.location.protocol + "</p>";
+        txt += "<b>Información sobre el navigador: </b>";
+        txt += "<p>AppName: " + window.navigator.appName + "</p>";
+        txt += "<p>CodeName: " + window.navigator.appCodeName + "</p>";
+        txt += "<p>Platform: " + window.navigator.platform + "</p>";
+
+        document.body.innerHTML = txt;
+    </script>
+</body>
+
+</html>

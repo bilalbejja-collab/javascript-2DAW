@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var cont = 3;
+        var i = 1;
+        var numero = 0;
+        var array = new Array();
+        var resultado = 0;
+        while (cont > 0) {
+            var num = parseInt(prompt("Dame num" + i + ": "));
+            array[i - 1] = num;
+            cont--;
+            i++;
+        }
+        if (array[0] == array[1] && array[0] == array[2]) {
+            resultado = array[0] + array[1];
+            resultado *= array[2];
+            document.write("El resultado es: " + resultado);
+        }
+    </script>
+</body>
+
+</html>

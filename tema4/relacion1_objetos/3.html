@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <script>
+        function Piso(metros_c, altura, num_habitaciones, precio) {
+            this.metros_c = metros_c;
+            this.altura = altura;
+            this.num_habitacionescio = num_habitaciones;
+            this.precio = precio;
+
+            this.imprimedatos = function () {
+                document.write("Metros cuadrados: " + this.metros_c + "m^2 <br>");
+                document.write("Altura: " + this.altura + "m <br>");
+                document.write("Numero de habitaciones: " + this.num_habitacionescio + "<br>");
+                document.write("Precio: " + this.precio + "€ <br>");
+            }
+
+            this.aplica_iva = function (iva) {
+                this.precio += (this.precio * iva) / 100;
+                document.write("<br>Precio con " + iva + " % de IVA: " + this.precio + "€<br>");
+            }
+        }
+
+        var piso = new Piso(parseInt(prompt("Dame cuantos metros cuadrados: ")), parseInt(prompt("Dame la altura: ")), parseInt(prompt("Dame el numero de habitaciones: ")), parseInt(prompt("Dame el precio: ")));
+
+        piso.imprimedatos();
+        piso.aplica_iva(parseInt(prompt("Dame el % de IVA: ")));
+    </script>
+</body>
+
+</html>

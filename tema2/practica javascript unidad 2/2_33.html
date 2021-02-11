@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_33</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var tiempoAyer = prompt("Ayer(SOL, NUBLADO o LLUVIA): ");
+        var tiempoHoy = prompt("Hoy(SOL, NUBLADO o LLUVIA): ");
+
+        function tiempo(a, h) {
+            var tiempoManyana = "";
+            //pasamos las dos variables a mayuscula para ignorar posibles errores
+            var ayer = a.toUpperCase();
+            var hoy = h.toUpperCase();
+
+            if (ayer == "SOL" && hoy == "SOL")
+                tiempoManyana += "SOL";
+            else if (ayer == "NUBLADO" && hoy == "NUBLADO")
+                tiempoManyana += "NUBLADO"
+            else if (ayer == "LLUVIA" && hoy == "LLUVIA")
+                tiempoManyana += "LLUVIA"
+            else if (ayer == "SOL" && hoy == "NOBLADO")
+                tiempoManyana += "NUBLADO"
+            else if (ayer == "NUBLADO" && hoy == "SOL")
+                tiempoManyana += "SOL"
+            else if (ayer == "SOL" && hoy == "LLUVIA")
+                tiempoManyana += "NUBLADO"
+            else if (ayer == "LLUVIA" && hoy == "SOL")
+                tiempoManyana += "NUBLADO"
+            else if (ayer == "NUBLADO" && hoy == "LLUVIA")
+                tiempoManyana += "LLUVIA"
+            else if (ayer == "LLUVIA" && hoy == "NUBLADO")
+                tiempoManyana += "NUBLADO"
+
+            document.write("AYERHOY->MAÑANA");
+            document.write("<br>===============================");
+            document.write("<br>" + ayer + hoy + "->" + tiempoManyana);
+        }
+
+        tiempo(tiempoAyer, tiempoHoy);
+    </script>
+</body>
+
+</html>

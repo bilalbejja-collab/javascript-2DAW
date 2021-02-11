@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51</title>
+</head>
+
+<body>
+    <script>
+        var total_personas = 0;
+        var total_varones = 0;
+        var total_mujeres = 0;
+        var cant_varones = 0;
+        var cant_mujeres = 0;
+        var cant_varones_edad_media = 0;
+
+
+        var personas_censadas = new Array()
+
+        while (numero_documento != 0) {
+            var numero_documento = parseInt(prompt("Dame numero de documento: "));
+            var edad = parseInt(prompt("Dame edad: "));
+            var sexo = prompt("Dame sexo('f = femenino' o 'm = masculino'): ");
+            sexo = sexo.toLowerCase();
+            switch (sexo) {
+                case 'f':
+                    if (numero_documento != 0) {
+                        cant_mujeres++;
+                    }
+                    break;
+                case 'm':
+                    if (numero_documento != 0) {
+                        cant_varones++;
+                        break;
+                    }
+            }
+
+            if (edad > 16 && edad < 65 && numero_documento != 0) {
+                cant_varones_edad_media++;
+            }
+
+            if (numero_documento != 0) {
+                personas_censadas.push("<br>Numero de documento: " + numero_documento + ", edad: " + edad + ", sexo: " + sexo);
+            }
+
+        }
+        document.write(personas_censadas);
+        document.write("<br>----------------------------------------------");
+        document.write("<br>a)  Cantidad total de personas censadas es " + personas_censadas.length);
+        document.write("<br>b)  Cantidad de varones es " + cant_varones);
+        document.write("<br>c)  Cantidad de mujeres es " + cant_mujeres);
+        document.write("<br>d)  Cantidad de varones cuya edad entre 16 y 65 años es " + cant_varones_edad_media);
+    </script>
+</body>
+
+</html>

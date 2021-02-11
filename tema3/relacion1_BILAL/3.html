@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let num_mes = new Date().getMonth();
+        alert(mes_en_letra(num_mes));
+
+        //Devuelve el mes actual en letar en formato completo 
+        function mes_en_letra(num_mes) {
+            let months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Deciembre"];
+            return months[num_mes];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio11</title>
+    <style>
+        td {
+            border: 1px solid black;
+            text-align: center;
+            font-size: 30px;
+            padding: 10px;
+            background-color: rgb(177, 177, 177);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let table = document.createElement("table");
+        let tr, td;
+        for (let i = 0; i < 2; i++) {
+            tr = document.createElement("tr");
+            for (let j = 0; j < 2; j++) {
+                td = document.createElement("td");
+                let contenido = document.createTextNode(prompt("Introduce el valor de la celda: "));
+                td.appendChild(contenido);
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table); 
+    </script>
+</body>
+
+</html>

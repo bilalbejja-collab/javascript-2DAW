@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50</title>
+</head>
+
+<body>
+    <script>
+        var suma = 0;
+        var cuenta = 1;
+        var cuentas = new Array()
+
+        while (cuenta > 0) {
+            var cuenta = parseInt(prompt("Dame numero de cuenta: "));
+            var nombre = prompt("Dame nombre del cliente: ");
+            var sueldo = parseInt(prompt("Dame sueldo: "));
+            if (sueldo > 0 && cuenta > 0) {
+                suma += sueldo;
+            }
+            var estado = "";
+            if (sueldo > 0) {
+                estado = "Acreedor";
+            } else if (sueldo < 0) {
+                estado = "Deudor";
+            } else {
+                estado = "Nulo";
+            }
+
+            if (cuenta > 0) {
+                cuentas.push("<br>cuenta: " + cuenta + ", nombre: " + nombre + ", estado: " + estado);
+            }
+        }
+        document.write(cuentas);
+        document.write("<br>----------------------------------------------");
+        document.write("<br>La suma total de saldos acreedores es " + suma);
+    </script>
+</body>
+
+</html>

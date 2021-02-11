@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_31</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var caracter = prompt("Dame carácter: ");
+        var numero = parseInt(prompt("Dame número: "));
+        
+        function cuadrado(caracter, numero) {
+            for (let i = 0; i < numero; i++) {
+                for (let j = 0; j < numero; j++) {
+                    document.write(caracter)
+                }
+                document.write("<br>");
+            }
+        }
+        
+        cuadrado(caracter, numero);
+    </script>
+</body>
+
+</html>

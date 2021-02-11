@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_26</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var caracter = prompt("Dame carácter: ");
+        var vocales = ['a', 'o', 'u', 'e', 'i'];
+        var cont = 0;
+        while (caracter != '*') {
+            if (vocales.indexOf(caracter) >= 0) {
+                cont++;
+            }
+            caracter = prompt("Dame carácter: ");
+        }
+        document.write("Has introducido: " + cont + " vocales.")
+
+    </script>
+</body>
+
+</html>

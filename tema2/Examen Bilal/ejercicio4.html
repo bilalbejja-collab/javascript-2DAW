@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4Bilal</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var termino = parseInt(prompt("Dame el término: "));
+        var razon = parseInt(prompt("Dame la razón: "));
+        var cantidad = parseInt(prompt("Dame el número de elementos que quieres que te muestro por pantalla: "));
+
+        function progresion(termino, razon, cantidad) {
+            var result = termino;
+            for (let i = 0; i < cantidad - 1; i++) {
+                document.write(result + ", ");
+                result = termino * razon;
+                termino = result;
+            }
+            document.write(result + ".");
+        }
+
+        //ejecucion del ejercicio
+        progresion(termino, razon, cantidad);
+    </script>
+</body>
+
+</html>

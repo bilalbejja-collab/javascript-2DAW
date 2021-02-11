@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio10</title>
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <script>
+        let elementos = document.all;
+        let array_elementos = new Array();
+        document.write("En el body hay " + elementos.length + " elementos");
+
+        for (let i = 0; i < elementos.length; i++) {
+            if (array_elementos.indexOf(elementos[i].tagName) == -1) {
+                array_elementos.push(elementos[i].tagName);
+            }
+        }
+        document.write("<br><br>Los elementos son: " + array_elementos + "<br><br>");
+
+        array_elementos.forEach(element => {
+            document.write(element + " => " + document.getElementsByTagName(element).length + "<br>");
+        });
+    </script>
+</body>
+
+</html>

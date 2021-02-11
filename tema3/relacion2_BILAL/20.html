@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #cuadrado {
+        width: 300px;
+        height: 300px;
+        background-color: yellow; 
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio20</title>
+</head>
+
+<body>
+    <input type="checkbox" checked id="interruptor" onclick="toggleVisibility(this)">
+    <label for="interruptor" id="descripcion">Contenedor visible</label>
+    <div id="cuadrado" style="display: block;"></div>
+    <br>
+    <button id="cambiar_estado" type="button" onclick="cambiar_estado()">Apagar</button>
+
+    <script>
+        //Cambia el estado de visibility usando el button cambiar_estado
+        function cambiar_estado() {
+            var x = document.getElementById("cuadrado");
+            if (x.style.display == "block") {
+                x.style.display = "none";
+                document.getElementById("interruptor").checked = false;
+                document.getElementById("cambiar_estado").innerHTML = "Encender"; 
+            } else {
+                x.style.display = "block";
+                document.getElementById("interruptor").checked = true;
+                document.getElementById("cambiar_estado").innerHTML = "Apagar"; 
+            }
+        } 
+
+        //Cambia el estado de visibility usando el checkbox interruptor
+        function toggleVisibility(check) {
+            var x = document.getElementById("cuadrado");
+            if (check.checked == true) {
+                x.style.display = "block";
+                document.getElementById("cambiar_estado").innerHTML = "Apagar"; 
+            } else {
+                x.style.display = "none";
+                document.getElementById("cambiar_estado").innerHTML = "Encender"; 
+            }
+        }
+    </script>
+</body>
+
+</html>

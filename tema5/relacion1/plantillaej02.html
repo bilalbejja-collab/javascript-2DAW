@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillaej02</title>
+    <style>
+        #miForm {
+            padding: 10px;
+            background-color: rgb(230, 211, 225);
+            border: 1px solid black;
+            width: 30%;
+            float: left;
+            margin-top: 7px;
+            margin-right: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" id="miForm">
+        <input type="checkbox" id="seleccionar">Seleccionar Todos
+        <input type="checkbox" id="deseleccionar">Deseleccionar Todos
+        <br>
+        <div id="elementos"></div>
+    </form>
+
+    <button id="enviar">Enviar>></button>
+    <br>
+    <textarea name="textarea" id="textarea" cols="40" rows="8"></textarea>
+
+    <script>
+        // Asignar eventos 
+        document.getElementById('seleccionar').addEventListener('click', seleccionarTodos, false);
+        document.getElementById('deseleccionar').addEventListener('click', deseleccionarTodos, false);
+        document.getElementById('enviar').addEventListener('click', enviar, false);
+        asginarNombres();
+
+        //Asigna los nombre a los item
+        function asginarNombres() {
+            var personas = ['pepe', 'lola', 'juan', 'lucas', 'lorena', 'asunta'];
+
+            //Agregar checkbox para cada persona del array 
+            personas.forEach(persona => {
+                if (document.getElementById(persona) == null) {
+                    elementos.innerHTML += "<input type='checkbox' name='it' value='" + persona + "'>" + persona + "<br>";
+                }
+            });
+        }
+
+        //Selecciona todos los checkboxs
+        function seleccionarTodos() {
+            var inputs = document.getElementsByName('it');
+            //ir seleccionando los checkboxes
+            inputs.forEach(element => {
+                element.checked = true;
+            });
+            document.getElementById('deseleccionar').checked = false;
+        }
+
+        //Deselecciona todos los checkboxs
+        function deseleccionarTodos() {
+            var inputs = document.getElementsByName('it');
+            //ir deseleccionando los checkboxes
+            inputs.forEach(element => {
+                element.checked = false;
+            });
+            document.getElementById('seleccionar').checked = false;
+        }
+
+        //Envia los nombre seleccionados al textarea
+        function enviar() {
+            var seleccionados = new Array();
+
+            //Añadir los seleccionados a un array  
+            var inputs = document.getElementsByName('it');
+
+            inputs.forEach(element => {
+                //si está checkeado
+                if (element.checked) {
+                    //Añado el label correspondiente al array seleccionados 
+                    seleccionados.push(element.value)
+                }
+            });
+
+            //Añadir el array seleccionados al textarea
+            document.getElementById("textarea").innerText = seleccionados;
+        }
+    </script>
+</body>
+
+</html>

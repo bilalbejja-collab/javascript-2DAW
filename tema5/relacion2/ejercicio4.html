@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ejercicio 4. Fotoslider</title>
+	<style>
+		div#contenedor {
+			margin: 0 auto;
+			width: 700px;
+			background: black;
+			border: 5px solid gold;
+			margin: 0 auto;
+			padding: 10px;
+			text-align: center;
+		}
+
+		div#lienzo {
+			width: 700px;
+			height: 500px;
+		}
+
+		div#controles {
+			background: white;
+			width: 90%;
+			text-align: center;
+			margin: 10px auto;
+			margin-bottom: 0;
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor" class="clearfix">
+		<div id="lienzo">
+			<img id="foto" src="imagenes/img01.jpg" alt="">
+		</div>
+		<div id="controles">
+			<input type="button" id="atras" value="<<">
+			<input type="button" id="avance" value=">>">
+		</div>
+
+	</div>
+
+	<script>
+		var indexFoto = 0;
+		window.onload = function () {
+			var ruta = "imagenes/";
+			var fotos = ["img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg", "img05.jpg", "img06.jpg"];
+
+			// Siguiente
+			document.getElementById("avance").addEventListener("click", next);
+
+			// Previa
+			document.getElementById("atras").addEventListener("click", prev);
+			
+			// Incrementa el indexFoto
+			function next() {
+				if (indexFoto > fotos.length - 2)
+					indexFoto = 0;
+				indexFoto++;
+				return setImg();
+			}
+
+			// Decrementa el indexFoto
+			function prev() {
+				if (indexFoto <= 0)
+					indexFoto = fotos.length;
+				indexFoto--;
+				return setImg();
+			}
+
+			// Modifica el src de la imagen dependientemente del indexFoto
+			function setImg() {
+				return document.getElementById("foto").setAttribute("src", ruta + fotos[indexFoto]);
+			}
+		}
+	</script>
+</body>
+
+</html>

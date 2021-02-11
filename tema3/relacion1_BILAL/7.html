@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio7</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        generar_quinielas(15).forEach(element => {
+            document.write(element + "<br>");
+        });
+
+        function generar_quinielas(cant) {
+            let quinielas = new Array();
+            let array = ["1", "X", "2"];
+            for (let i = 0; i < cant; i++) {
+                let rndm = Math.floor(Math.random() * array.length);
+                quinielas.push(array[rndm]);
+            }
+            return quinielas;
+        }
+    </script>
+</body>
+
+</html>

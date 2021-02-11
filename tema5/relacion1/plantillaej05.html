@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        div {
+            box-sizing: border-box;
+            width: 100%;
+            border: 100px solid black;
+            float: left;
+            align-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">REGISTRATION FORM</h1>
+    <form name="miForm" action="ejemplo.html" onsubmit="return validarForm()" method="post">
+        <p>
+            Nombre: *
+            <br />
+            <input type="text" name="Nombre" />
+        </p>
+        <p>
+            Apellidos: *
+            <br />
+            <input type="text" name="Apellidos" />
+        </p>
+        <p>
+            Contraseña: *
+            <br />
+            <input type="password" name="Password" />
+        </p>
+        <p>
+            Repite contraseña: *
+            <br />
+            <input type="password" name="Re-password" />
+        </p>
+        <p>
+            Email: *
+            <br />
+            <input type="text" name="Email" />
+        </p>
+        <p>
+            DNI: *
+            <br />
+            <input type="text" name="DNI" />
+        </p>
+        <p>
+            Teléfono:
+            <br />
+            <input type="tel" name="Telefono" />
+        </p>
+        <p>
+            Sexo:
+            <br />
+            <input type="radio" name="Sexo" value="hombre">Hombre
+            <input type="radio" name="Sexo" value="mujer">Mujer
+        </p>
+        <p>
+            Tarajeta: *
+            <br />
+            <select type="text" value="" name="Tarjeta">
+                <option>Seleccione una opción</option>
+                <option>Visa</option>
+                <option>MasterCard</option>
+            </select>
+        </p>
+        <input type="checkbox" name="Acceptar" id="Acceptar">
+        Accepto las condiciones de uso de esta web
+        <br>
+        <input type="submit" name="enviar" id="enviar" value="Aceptar">
+    </form>
+
+    <script>
+        document.miForm.addEventListener('submit', validarForm, false);
+
+        function validarForm(e) {
+            e.preventDefault();
+            var nombre =
+                document.forms["miForm"]["Nombre"];
+            var apellidos =
+                document.forms["miForm"]["Apellidos"];
+            var password =
+                document.forms["miForm"]["Password"];
+            var re_password =
+                document.forms["miForm"]["Re-password"];
+            var email =
+                document.forms["miForm"]["Email"];
+            var dni =
+                document.forms["miForm"]["DNI"];
+            var telefono =
+                document.forms["miForm"]["Telefono"];
+            var sexo =
+                document.forms["miForm"]["Sexo"];
+            var tarjeta =
+                document.forms["miForm"]["Tarjeta"];
+            var acceptar =
+                document.forms["miForm"]["Acceptar"];
+
+            if (nombre.value == "") {
+                window.alert("Introduce tu nombre.");
+                nombre.focus();
+                return false;
+            }
+
+            if (apellidos.value == "") {
+                window.alert("Introduce tus apellidos.");
+                apellidos.focus();
+                return false;
+            }
+
+            if (password.value == "") {
+                window.alert("Introduce tu contraseña.");
+                password.focus();
+                return false;
+            }
+
+            if (re_password.value == "") {
+                window.alert("Repite tu contraseña.");
+                re_password.focus();
+                return false;
+            }
+
+            if (password.value != "" && re_password != "") {
+                if (!verificarPassword(password.value, re_password.value)) {
+                    window.alert("La contraseña no coincide.");
+                    password.focus();
+                    return false;
+                }
+            }
+
+            if (email.value == "") {
+                window.alert("Introduce tu email.");
+                email.focus();
+                return false;
+            } else {
+                if (!verificarEmail(email.value)) {
+                    window.alert("El email que has introducido no es válido.");
+                    email.focus();
+                    return false;
+                }
+            }
+
+            if (dni.value == "") {
+                window.alert("Introduce tu dni.");
+                dni.focus();
+                return false;
+            } else {
+                if (!verificarDNI(dni.value)) {
+                    window.alert("El dni que has introducido no es válido.");
+                    dni.focus();
+                    return false;
+                }
+            }
+ 
+            if (tarjeta.selectedIndex < 1) {
+                alert("Seleccione un tarjeta.");
+                tarjeta.focus();
+                return false;
+            }
+
+            if (!acceptar.checked) {
+                alert("Debes acceptar las condiciones de uso.");
+                acceptar.focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        function verificarPassword(password, re_password) {
+            return password == re_password;
+        }
+
+        function verificarEmail(email) {
+            return email.includes("@") && email.includes(".");
+        }
+
+        function verificarDNI(dni) {
+            return isLetter(dni[dni.length - 1]);
+        }
+
+        function isLetter(str) {
+            return str.length === 1 && str.match(/[a-z]/i);
+        }
+    </script>
+</body>
+
+</html>

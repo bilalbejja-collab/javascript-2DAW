@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="formulario">
+        introduce tu nombre <input type="text" name="nombre" id="nombre"><br />
+        introduce tus apellidos <input type="text" name="apellidos" id="apellidos"><br />
+        introduce tu email <input type="email" name="email" id="email"><br />
+        Elige tu afición
+        <select name="aficion" id="aficion">
+            <option value="informática" selected>Informática</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="mecánica">Mecánica</option>
+            <option value="medicina">Medicina</option>
+        </select><br />
+        Cambiar color de fondo <input type="color" name="fondo" id="fondo"><br />
+        <input type="button" value="cambiar colo" onclick="cambiar_color()"><br />
+        <input type="button" value="Enviar datos" onclick="abrirVentana()">
+        <input type="button" value="Cancelar" onclick="cancelar()">
+    </form>
+    <script>
+        var miventana;
+        miventana.document.body.style.backgroundColor = document.getElementById("fondo").value;
+        function abrirVentana() {
+            miventana = window.open("", "miventana", "width=600 height=600");
+            miventana.document.write("<title>Comunicacion entre ventanas</title><body><h1>Bienvenido a mi web " + document.getElementById("nombre").value + " con apellidos " + document.getElementById("apellidos").value + "</h1>");
+            miventana.document.write("<p>Y con email: " + document.getElementById("email").value + " y aficiones en " + document.getElementById("aficion").value + "</p>");
+            cambiar_color();
+        }
+
+        function cambiar_color() {
+            miventana.document.body.style.backgroundColor = document.getElementById("fondo").value;
+        }
+
+        function cancelar() {
+            miventana.close();
+        }
+    </script>
+</body>
+
+</html>

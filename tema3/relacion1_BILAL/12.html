@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio12</title>
+</head>
+
+<body>
+    <h1>Otra forma de hacer el ejercicio 11</h1>
+    <script type="text/javascript">
+        let fuente = prompt("Dame texto fuente: ");
+        let clave = prompt("Dame clase a buscar: ");
+
+        let posicion = fuente.indexOf(clave);
+        //si la posicion de la clave es mayor o igual entoces si esta en el texto
+        if (posicion >= 0) {
+            document.write("Posicion: " + posicion);
+        } else {
+            document.write("La clave \"" + clave + "\" no se encuentra en \"" + fuente + "\"");
+        }
+    </script>
+</body>
+
+</html>

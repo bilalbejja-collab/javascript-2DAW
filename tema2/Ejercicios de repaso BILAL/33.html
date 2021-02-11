@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33</title>
+</head>
+
+<body>
+    <script>
+        var dia = parseInt(prompt("Dame día de mes : "));
+        var mes = parseInt(prompt("Dame mes de año : "));
+        var year = parseInt(prompt("Dame año : "));
+        var fecha = year + "/" + mes + "/" + dia;
+
+        if (dateCheck("2020/1/1", "2020/3/31", fecha))
+            alert("Si corresponde al primer trimestre del año");
+        else
+            alert("No corresponde al primer trimestre del año");
+
+        function dateCheck(from, to, check) {
+
+            var fDate, lDate, cDate;
+            fDate = new Date(from);
+            lDate = new Date(to);
+            cDate = new Date(check);
+
+            if ((cDate <= lDate && cDate >= fDate)) {
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

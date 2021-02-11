@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1Bilal</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var mayor = 0;
+        var menor = 0;
+        var media = 0;
+        var contador_par = 0;
+        var contador_primo = 0;
+
+        function operaciones(num1, num2, num3, num4, num5) {
+            //creo un array y meto los 5 números
+            var numeros = new Array();
+            numeros.push(num1);
+            numeros.push(num2);
+            numeros.push(num3);
+            numeros.push(num4);
+            numeros.push(num5);
+
+            //apartado a
+            //ordenacion descendiente
+            numeros = numeros.sort(function (a, b) { return b - a });
+            //el mayor es el primero del array
+            mayor = numeros[0];
+
+            //apartado b
+            //ordenacion ascendiente
+            numeros = numeros.sort(function (a, b) { return a - b });
+            //el menor es el primero del array
+            menor = numeros[0];
+
+            //apartado c
+            media = num1 + num2 + num3 + num4 + num5;
+            media /= 5;
+
+            //apartado d
+            if (es_par(num1))
+                contador_par++
+            if (es_par(num2))
+                contador_par++
+            if (es_par(num3))
+                contador_par++
+            if (es_par(num4))
+                contador_par++
+            if (es_par(num5))
+                contador_par++
+            //apartado e
+            if (es_primo(num1))
+                contador_primo++
+            if (es_primo(num2))
+                contador_primo++
+            if (es_primo(num3))
+                contador_primo++
+            if (es_primo(num4))
+                contador_primo++
+            if (es_primo(num5))
+                contador_primo++
+
+            document.write("a) El mayor de todos los números recibidos: " + mayor);
+            document.write("<br>b) El menor de todos los números recibidos:" + menor);
+            document.write("<br>c) La media de todos los números recibidos: " + media);
+            document.write("<br>d) Cuantos números pares hay en los números recibidos: " + contador_par);
+            document.write("<br>e) Cuantos números primos hay en los números recibidos: " + contador_primo);
+        }
+
+        //verifica si un unmero es par o no
+        function es_par(numero) {
+            return numero % 2 == 0;
+        }
+
+        //verifica si un unmero es primo o no
+        function es_primo(numero) {
+            for (let i = 1; i < numero; i++) {
+                i++
+                return numero == 2 || numero % i != 0;
+            }
+        }
+
+        //ejecucion del ejercicio
+        var num1 = parseInt(prompt("Dame numero1: "))
+        var num2 = parseInt(prompt("Dame numero2: "))
+        var num3 = parseInt(prompt("Dame numero3: "))
+        var num4 = parseInt(prompt("Dame numero4: "))
+        var num5 = parseInt(prompt("Dame numero5: "))
+        operaciones(num1, num2, num3, num4, num5);
+    </script>
+</body>
+
+</html>

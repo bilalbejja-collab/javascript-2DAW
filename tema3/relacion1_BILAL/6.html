@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        generar_aleatorios(6).forEach(element => {
+            document.write(element + " ");
+        });
+
+        function generar_aleatorios(cant) {
+            let aleatorios = new Array();
+            for (let i = 0; i < cant; i++) {
+                let rndm = Math.floor((Math.random() * 49) + 1);
+                aleatorios.push(rndm);
+            }
+            return aleatorios;
+        }
+    </script>
+</body>
+
+</html>

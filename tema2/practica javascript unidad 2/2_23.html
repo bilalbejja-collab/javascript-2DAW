@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_23</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var numero = parseInt(prompt("Numero: "));
+        var total = 0;
+        while (numero != 9999) {
+            //Verifico que es numero y incremento total en uno
+            if (Number.isInteger(numero)) {
+                total++;
+            }
+            numero = parseInt(prompt("Numero: "));
+        }
+        document.write("El total de los números que hemos introducido sin contar el susodicho 9999 es: " + total)
+
+    </script>
+</body>
+
+</html>

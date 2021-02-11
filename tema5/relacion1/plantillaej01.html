@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillaej01</title>
+    <style>
+        #miForm {
+            padding: 10px;
+            background-color: rgb(230, 211, 225);
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" id="miForm">
+        <input type="checkbox" id="seleccionar">Seleccionar Todos
+        <input type="checkbox" id="deseleccionar">Deseleccionar Todos
+        <br>
+        <input type="checkbox"> Item1
+        <br>
+        <input type="checkbox"> Item2
+        <br>
+        <input type="checkbox"> Item3
+        <br>
+        <input type="checkbox"> Item4
+        <br>
+        <input type="checkbox"> Item5
+        <br>
+        <input type="checkbox"> Item6
+        <br>
+        <input type="checkbox"> Item7
+    </form>
+
+    <script>
+        // Asignar eventos 
+        document.getElementById('seleccionar').addEventListener('click', seleccionarTodos, false);
+        document.getElementById('deseleccionar').addEventListener('click', deseleccionarTodos, false);
+
+        //Selecciona todos los checkboxs
+        function seleccionarTodos() {
+            for (i = 0; i < document.form.elements.length; i++)
+                if (document.form.elements[i].type == "checkbox")
+                    document.form.elements[i].checked = 1
+
+            document.form.elements[1].checked = 0;
+        }
+
+        //Deselecciona todos los checkboxs
+        function deseleccionarTodos() {
+            for (i = 0; i < document.form.elements.length; i++)
+                if (document.form.elements[i].type == "checkbox")
+                    document.form.elements[i].checked = 0
+
+            document.form.elements[1].checked = 1;
+        } 
+    </script>
+</body>
+
+</html>

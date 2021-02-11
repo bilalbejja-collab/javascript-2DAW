@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body onload="mueveReloj()">
+
+    <script>
+        function mueveReloj() {
+            let fecha = new Date();
+            let horas = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+
+            if (segundos < 10) {
+                segundos = "0" + segundos;
+            }
+            if (minutos < 10) {
+                minutos = "0" + minutos;
+            }
+            if (horas < 10) {
+                horas = "0" + horas;
+            }
+
+            document.getElementById("reloj").value = horas + ":" + minutos + ":" + segundos;
+
+            setTimeout(mueveReloj, 1000);
+        }
+
+    </script>
+
+    <form action="">
+        <input type="text" name="reloj" id="reloj" value="00:00:00" size="9" maxlength="8">
+    </form>
+</body>
+
+</html>

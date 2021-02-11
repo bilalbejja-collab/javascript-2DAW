@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function cambiaColor(element) {
+            document.bgColor = element.id;
+            document.getElementById(element.id).style.backgroundColor = "white";
+        }
+        function restaurarColor(element) {
+            document.bgColor = "white";
+            document.getElementById(element.id).style.backgroundColor = element.id;
+        }
+    </script>
+    <div id="red" style="background-color: red;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+    <div id="green" style="background-color: green;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio15</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let cadena = prompt("Dame cadena: ");
+        //a
+        let primera_mitad = cadena.substring(0, cadena.length / 2);
+        //b
+        let ultimo_caracter = cadena.charAt(cadena.length - 1);
+        //c
+        let inversa = invertir_cadena(cadena);
+        //d
+        let caracteres_separados = separar_cadena(cadena, '-');
+        //e
+        let cant_vocales = 0;
+        let vocales = ['a', 'o', 'u', 'e', 'i'];
+
+        for (let i = 0; i < cadena.length; i++) {
+            if (vocales.includes(cadena.toLocaleLowerCase().charAt(i))) {
+                cant_vocales++;
+            }
+        }
+
+        //funciones
+        function invertir_cadena(cadena) {
+            return cadena.split('').reverse().join('');
+        }
+
+        function separar_cadena(cadena, separador) {
+            return cadena.split('').join(separador);
+        }
+
+        //main del programa
+        document.write("a) La primera mitad de los caracteres de la cadena: " + primera_mitad);
+        document.write("<br>b) El último carácter: " + ultimo_caracter);
+        document.write("<br>c) Inversa: " + inversa);
+        document.write("<br>d) Cada carácter del String separado con un guion: " + caracteres_separados);
+        document.write("<br>e) La cantidad de vocales almacenadas: " + cant_vocales);
+    </script>
+</body>
+
+</html>

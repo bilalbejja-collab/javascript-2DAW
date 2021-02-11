@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_14</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var numero = parseInt(prompt("Numero: "));
+
+        document.write(verificaPrimo(numero));
+
+        function verificaPrimo(numero) {
+            for (let i = 1; i < numero; i++) {
+                i++
+                return (numero == 2 || numero % i != 0) ? "El número es primo." : "El número no es primo."
+            }
+        }
+
+    </script>
+</body>
+
+</html>

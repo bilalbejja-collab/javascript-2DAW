@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var nombre_candidato = prompt("Dame nombre: ");
+        var total_preguntas = parseInt(prompt("Dame la cantidad total de preguntas: "));
+        var total_respestas_correctas = parseInt(prompt("Dame la cantidad de respuestas correctas: "));
+        var porcentaje = (total_respestas_correctas * 100) / total_preguntas;
+        if (porcentaje >= 90) {
+            document.write("Nivel superior");
+        } else if (porcentaje >= 75 && porcentaje < 90){
+            document.write("Nivel medio");
+        }else if (porcentaje >= 50 && porcentaje < 75){
+            document.write("Nivel bajo");
+        }else if (porcentaje < 50){
+            document.write("Fuera de nivel");
+        }
+    </script>
+</body>
+
+</html>

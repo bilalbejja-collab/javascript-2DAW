@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio17</title>
+    <script>
+        function validateForm() {
+            var name =
+                document.forms["myForm"]["nombre"];
+            var edad =
+                document.forms["myForm"]["edad"];
+            var fechactual =
+                document.forms["myForm"]["fechactual"];
+            var email =
+                document.forms["myForm"]["email"];
+
+            if (name.value == "" || !isNaN(name.value) || name.value.length < 3) {
+                window.alert("Nombre no introducido o incorrecto!!");
+                name.focus();
+                return false;
+            }
+
+            if (edad.value == "" || isNaN(edad.value) || edad.value < 1) {
+                window.alert("Edad no introducido o incorrecto!!");
+                edad.focus();
+                return false;
+            }
+
+            if (fechactual.value == "" || !isValidDate(fechactual.value)) {
+                window.alert("Fecha actual no introducido o incorrecto!!");
+                fechactual.focus();
+                return false;
+            }
+
+            if (email.value == "" || !validarEmail(email.value)) {
+                window.alert(
+                    "Email no introducido o incorrecto!!");
+                email.focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        // Valida E-mail
+        function validarEmail(valor) {
+            return (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor));
+        }
+
+        // Valida Fecha
+        function isValidDate(email) {
+            return (email.match(/^(?:(0[1-9]|1[012])[\- \/.](0[1-9]|[12][0-9]|3[01])[\- \/.](19|20)[0-9]{2})$/));
+        }
+    </script>
+
+    <style>
+        div {
+            box-sizing: border-box;
+            width: 100%;
+            border: 100px solid black;
+            float: left;
+            align-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">REGISTRATION FORM</h1>
+    <!--Si no hay ningun error sale un alert CORRECTO cuando estan todos los campos bien rellenados-->
+    <form name="myForm" action="/" onsubmit="return validateForm()?alert('Correcto!!'):false" method="post">
+        <p>Nombre: <input type="text" size="69" name="nombre" /></p>
+        <br />
+        <p>Edad: <input type="text" size="72" name="edad" />
+        </p>
+        <br />
+        <p>Fecha actual: <input type="text" size="64" name="fechactual" placeholder="(MM-DD-YYYY) , (MM/DD/YYYY) o (MM DD YYYY)"/></p>
+        <br />
+        <p>E-mail: <input type="text" size="70" name="email" /></p>
+        <br />
+        <p>
+            <input type="submit" value="send" name="Submit" />
+            <input type="reset" value="Reset" name="Reset" />
+        </p>
+    </form>
+</body>
+
+</html>

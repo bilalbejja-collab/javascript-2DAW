@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1. Divisas</title>
+	<style>
+		div#contenedor {
+			width: 800px;
+			background: azure;
+			border: 1px solid gold;
+			margin: 0 auto;
+			padding: 50px;
+		}
+
+		div#resultado {
+			margin: 10px;
+			border: 0px solid #666;
+			color: deeppink;
+			background-color: whitesmoke;
+			width: 100%;
+		}
+
+		input {
+			text-align: right;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor">
+		<h1>Conversor de divisas</h1>
+		<form action="" name="conversor">
+
+			Cantidad de <input type="number" id="cantidad" value="1"> € a
+			<select name="divisa" id="divisa"></select>
+
+			<input type="button" value="Convertir" id="convertir">
+		</form>
+		<div id="resultado"></div>
+	</div>
+
+	<script>
+		function llenarCombo(combo) {
+			var arrMonedas = new Array(
+				new Option("Por favor seleccione", "0"),
+				new Option("Argentina - Peso", "0.91358"),
+				new Option("Australia - Dólar", "1.71135"),
+				new Option("Bolivia - Boliviano", "6.14157"),
+				new Option("Brasil - Real", "2.32898"),
+				new Option("Canadá - Dólar", "1.41010"),
+				new Option("Chile - Peso", "605.94600"),
+				new Option("Colombia - Peso", "2087.35000"),
+				new Option("Costa Rica - Colón", "298.12500"),
+				new Option("Cuba - Peso", "0.91440"),
+				new Option("Dinamarca - Corona", "7.44020"),
+				new Option("Ecuador - Sucre", "22.00000"),
+				new Option("EEUU - Dólar", "0.89266"),
+				new Option("El Salvador - Colón", "8.00363"),
+				new Option("España - Peseta", "166.38599"),
+				new Option("Euro", "1.00000"),
+				new Option("Grecia - Dracma", "340.76000"),
+				new Option("Guatemala - Quetzal", "7.19385"),
+				new Option("Honduras - Lempira", "14.20210"),
+				new Option("Inglaterra - Libra", "0.63240"),
+				new Option("Japón - Yen", "109.74000"),
+				new Option("México - Peso", "8.32780"),
+				new Option("Nicaragua - Córdoba", "12.40969"),
+				new Option("Noruega - Corona", "8.09335"),
+				new Option("Panamá - Balboa", "0.91449"),
+				new Option("Paraguay - Guaraní", "3991.36000"),
+				new Option("Perú - Nuevo Sol", "3.18249"),
+				new Option("R. Dominicana - Peso", "14.82389"),
+				new Option("Rusia - Rublo", "26.86416"),
+				new Option("Suecia - Corona", "9.37950"),
+				new Option("Suiza - Franco", "1.51980"),
+				new Option("Uruguay - Peso", "12.19352"),
+				new Option("Venezuela - Bolívar", "672.08400")
+			);
+			//Añade la información al combo
+			for (var i = 0; i < arrMonedas.length; i++) {
+				combo.options[i] = arrMonedas[i];
+				if (i == 0)
+					combo.options.selected = true;
+			}
+		}
+
+		function conversorMoneda() {
+			// Index del option seleccionado
+			let index = document.getElementById("divisa").selectedIndex;
+			let cantidad = document.getElementById("cantidad").value;
+			let valor = document.getElementById("divisa").value;
+			let estado = document.getElementById("divisa")[index].text;
+
+			document.getElementById("resultado").innerHTML =
+				cantidad + "€ son " + valor * cantidad + " de " + estado;
+		}
+
+		window.onload = function () {
+			var divisa = document.getElementById("divisa");
+			llenarCombo(divisa);
+		}
+
+		// Asignamos el evento conversorMoneda al boton convertir
+		document.getElementById("convertir").addEventListener("click", conversorMoneda);
+	</script>
+</body>
+
+</html>

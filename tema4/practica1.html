@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1. Array Multidimensionales</title>
+</head>
+
+<body>
+    <script>
+        //Arrays
+        var poblaciones = ['Localidad', 'Enero', 'Febrero', 'Marzo', 'Abril'];
+        var temperaturas = [['Cuevas del Alamanzora', 12, 13, 15, 18], ['Granada', 4.5, 8, 9, 15], ['Madrid', 4, 5.8, 8, 13], ['Soria', 0, 1, 6, 10]];
+
+        document.write("<table border=1>");
+        //recorrer poblaciones
+        document.write("<tr>");
+        poblaciones.forEach(pueblo => {
+            document.write("<th>" + pueblo + "</th>");
+        });
+        document.write("</tr>");
+        //recorrer temperaturas
+        for (i = 0; i < temperaturas.length; i++) {
+            document.write("<tr>");
+            for (j = 0; j < temperaturas[i].length; j++) {
+                document.write("<td>" + temperaturas[i][j] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        var peor_media = 50;
+        var pueblo_peor_media = "";
+
+        document.write("<br>Apartado1:<br>");
+        //Calcular la media de  Temperatura por cada población
+        for (let j = 0; j < temperaturas.length; j++) {
+            var media = 0;
+            for (i = 1; i <= temperaturas.length; i++) {
+                media += temperaturas[j][i];
+
+            }
+            media /= temperaturas.length;
+            //Obtener la peor media 
+            if (media < peor_media) {
+                peor_media = media;
+                pueblo_peor_media = temperaturas[j][0];
+            }
+            document.write("La media de temperatura en " + temperaturas[j][0] + " es de " + media + "ºC<br>");
+        }
+
+        //Calcula la temperatura más alta en Marzo y a que población corresponde.
+        var media_marzo = 0;
+        var pueblo = "";
+        for (let j = 0; j < temperaturas.length; j++) {
+            if (temperaturas[j][3] > media_marzo) {
+                media_marzo = temperaturas[j][3];
+                pueblo = temperaturas[j][0];
+            }
+        }
+
+        //Calcula la media de la temperatura en el mes de abril.
+        var media_abril = 0;
+        for (let j = 0; j < temperaturas.length; j++) {
+            media_abril += temperaturas[j][4];
+        }
+        media_abril /= temperaturas.length;
+
+        //Mostrar la población  con peor media de temperatura.
+        document.write("<br>Apartado2:<br>");
+        document.write("La temperatura más alta en Marzo ha sido: " + media_marzo + "ºC, y corresponde a la población: " + pueblo + "<br>");
+        document.write("<br>Apartado3:<br>");
+        document.write("La media de temperatura en el mes de Abril ha sido: " + media_abril + "ºC<br>");
+        document.write("<br>Apartado4:<br>");
+        document.write("La población con peor media de temperatura ha sido: " + pueblo_peor_media+"<br>");
+
+        //Añade la población: ['Málaga', 14, 16.7, 18.4,20.3]
+        temperaturas.push(['Málaga', 14, 16.7, 18.4, 20.3]);
+        document.write("<br>Apartado5:<br>");
+        document.write("<table border=1>");
+        //recorrer poblaciones
+        document.write("<tr>");
+        poblaciones.forEach(pueblo => {
+            document.write("<th>" + pueblo + "</th>");
+        });
+        document.write("</tr>");
+        //recorrer temperaturas
+        for (i = 0; i < temperaturas.length; i++) {
+            document.write("<tr>");
+            for (j = 0; j < temperaturas[i].length; j++) {
+                document.write("<td>" + temperaturas[i][j] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

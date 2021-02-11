@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let nombre;
+        let cont = 0;
+        do {
+            nombre = prompt("Dame nombre: ");
+            //he hecho esta comprobacion por si introduzco FIN a primera no me encrementa el contador
+            if (nombre != "Fin") {
+                cont++;
+            }
+        } while (nombre != "Fin");
+
+        //ejecución del programa
+        document.write("Has introducido " + cont + " nombre(s).");
+    </script>
+</body>
+
+</html>

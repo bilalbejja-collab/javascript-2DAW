@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <script>
+        function CD_Musica(titulo, grupo, fecha) {
+            this.titulo = titulo;
+            this.grupo = grupo;
+            this.fecha = fecha;
+
+            this.imprimedatos = function () {
+                document.write("El título es " + this.titulo + "<br>");
+                document.write("El grupo es " + this.grupo + "<br>");
+                document.write("La fecha es " + this.fecha + "<br>");
+            }
+        }
+
+        var cd1 = new CD_Musica(prompt("Dame titulo 1: "), prompt("Dame grupo 1: "), prompt("Dame fecha 1: "));
+        var cd2 = new CD_Musica(prompt("Dame titulo 2: "), prompt("Dame grupo 2: "), prompt("Dame fecha 2: "));
+        var cd3 = new CD_Musica(prompt("Dame titulo 3: "), prompt("Dame grupo 3: "), prompt("Dame fecha 3: "));
+
+        var cds = new Array();
+        cds.push(cd1);
+        cds.push(cd2);
+        cds.push(cd3);
+
+        for (let i = 0; i < cds.length; i++) {
+            document.write("CD_musica " + (i + 1) + ": <br>");
+            cds[i].imprimedatos();
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio16</title>
+    <style>
+        img {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        imgArray = new Array(
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg"
+        );
+
+        numImages = 4;
+        curImage = 1;
+
+        function f_slideshow(xflip) {
+            curImage = curImage + xflip;
+
+            if (curImage > numImages) { curImage = 1; }
+
+            if (curImage == 0) { curImage = numImages; }
+
+            document.getElementById("myImg").src = imgArray[curImage - 1];
+        }
+    </script>
+
+    <br>
+    <br>
+    <br>
+    
+    Click on the buttons to flip through the photos.
+    
+    <br>
+    <br>
+
+    <input type="button" value="<< Prev" name="cb_prev" onclick="f_slideshow(-1)">
+    <input type="button" value="Next >>" name="cb_next" onclick="f_slideshow(1)">
+    
+    <br>
+    <br>
+    
+    <img id="myImg" src='1.jpg'>
+
+</body>
+
+</html>

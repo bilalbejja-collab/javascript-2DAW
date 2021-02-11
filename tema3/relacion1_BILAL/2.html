@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let dia_semana = new Date().getDay();
+        alert(dia_en_letra(dia_semana)); 
+
+        //Devuelve el dia de la semana en formato corto
+        function dia_en_letra(num_dia) {
+            switch (num_dia) {
+                case 0:
+                    return "Dom"
+                    break;
+                case 1:
+                    return "Lun"
+                    break;
+                case 2:
+                    return "Mar"
+                    break;
+                case 3:
+                    return "Mie"
+                    break;
+                case 4:
+                    return "Jue"
+                    break;
+                case 5:
+                    return "Vie"
+                    break;
+                case 6:
+                    return "Sab"
+                    break;
+                default:
+                    return "Número de día inválido!"
+                    break;
+            }
+        } 
+    </script>
+</body>
+</html>

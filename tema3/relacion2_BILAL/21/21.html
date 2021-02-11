@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio21</title>
+</head>
+
+<body onload="banner()">
+    <div class="container">
+        <img id="banner" src="" alt="">
+    </div>
+    <script>
+        var cont = 1;
+        function banner() {
+            if (cont == 3) {
+                cont = 1;
+            }
+            var imagen = "img/" + cont + ".jpg";
+            document.getElementById("banner").src = imagen;
+            cont++;
+            setTimeout("banner()", 1000);
+        }
+    </script>
+</body>
+
+</html>

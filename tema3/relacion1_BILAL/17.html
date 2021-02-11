@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio17</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let miWindow;
+
+        function abreventana(width, height) {
+            miWindow = window.open("", "myWindow", "width=" + width + ", height=" + height + "");
+            myWindow.document.write("<p>Está es 'miWindow'</p>");
+            myWindow.opener.document.write("<p>Esta es la ventana principal!</p>");
+        }
+
+        function cierreventana() {
+            if (miWindow) {
+                miWindow.close();
+            }
+        }
+    </script>
+
+    <button onclick="abreventana(200,100)">Abre "miWindow"</button>
+    <button onclick="cierreventana()">Cierre "miWindow"</button>
+</body>
+
+</html>

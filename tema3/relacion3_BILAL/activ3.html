@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad-3</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var letra = prompt("Dame letra: ");
+
+        letra = letra.toLocaleUpperCase();
+
+        //Verifica que la letra es válida
+        if (isLetter(letra)) {
+            contar_Y_mostrar_DNIs_porLetra(letra);
+        } else {
+            alert("No has introducido una letra!!");
+        }
+
+        // Cuenta el numero de DNIs con un letra especifica
+        function contar_Y_mostrar_DNIs_porLetra(letra) {
+            let contador = 0;
+            let dni = "";
+            let DNIs = new Array();
+            for (let i = 1; i < 1000; i++) {
+                if (i < 10) {
+                    if (obtener_letraDni("00" + i) == letra) {
+                        contador++;
+                        dni = i + "-" + letra;
+                        DNIs.push(dni);
+                    }
+                } else if (i >= 10 && i < 100) {
+                    if (obtener_letraDni("0" + i) == letra) {
+                        contador++;
+                        dni = i + "-" + letra;
+                        DNIs.push(dni);
+                    }
+                } else if (i >= 100 && i < 1000) {
+                    if (obtener_letraDni(i) == letra) {
+                        contador++;
+                        dni = i + "-" + letra;
+                        DNIs.push(dni);
+                    }
+                }
+            }
+            // Mostrar el numero de DNIs con una letra 
+            //y tras ello mostrar todos los DNIs que llevan esa letra
+            document.write("Con la letra '" + letra + "' hay " + contador + " DNIs.<br>");
+            for (let i = 0; i < contador; i++) {
+                document.write(DNIs[i] + "<br>");
+            }
+        }
+
+        //Verifica si el carácter es una letra
+        function isLetter(str) {
+            //match(/[a-z]/i)  si nos da igual si la letra es minúscula o mayúscula 
+            //match(/[a-z]/)  solo minúsculas
+            //match(/[A-Z]/)  solo mayúsculas
+            return str.length === 1 && str.match(/[A-Z]/) ? true : false;
+        }
+
+        // Calcula la letra del DNI
+        function obtener_letraDni(numero) {
+            var resto = (numero % 23);
+
+            var array = {
+                0: 'T', 1: 'R', 2: 'W', 3: 'A', 4: 'G', 5: 'M', 6: 'Y', 7: 'F', 8: 'P', 9: 'D', 10: 'X', 11: 'B', 12: 'N', 13: 'J'
+                , 14: 'Z', 15: 'S', 16: 'Q', 17: 'V', 18: 'H', 19: 'L', 20: 'C', 21: 'K', 22: 'E'
+            };
+
+            return array[resto];
+        }
+
+    </script>
+</body>
+
+</html>

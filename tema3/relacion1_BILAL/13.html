@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio13</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let palabra = prompt("Dame palabra: ");
+        let palabra_invertida = invertir_cadena(palabra);
+
+        if (palabra == palabra_invertida) {
+            document.write("La palabra " + palabra + " es PALÍNDROMA");
+        } else {
+            document.write("La palabra " + palabra + " no es PALÍNDROMA");
+        }
+
+        //Invierte un cadena 
+        function invertir_cadena(texto) {
+            return texto.split('').reverse().join('');
+        }
+    </script>
+</body>
+
+</html>

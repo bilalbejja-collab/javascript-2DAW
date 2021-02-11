@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad-4</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //calcular cuantos numeros son
+        document.write("Hay " + calcula_cantidad(sacar_primosYPalindromos(1, 100000)) + " número(s).<br>");
+        //devolver el array de todos los numeros 
+        document.write(sacar_primosYPalindromos(1, 100000)); 
+
+        //Devuelve la longitud del array
+        function calcula_cantidad(array) {
+            return array.length;
+        }
+
+        //Devuelve un array de todos los numeros primos y palindromos a la vez 
+        function sacar_primosYPalindromos(from, to) {
+            let array_numeros = new Array();
+            for (let i = from; i <= to; i++) {
+                if (esPrimo(i) && esPalidromo(i)) {
+                    array_numeros.push(i);
+                }
+            }
+            return array_numeros;
+        }
+
+        //Verifica si numero es primo
+        function esPrimo(numero) {
+            if (numero == 0 || numero == 1 || numero == 4)
+                return false;
+            for (let x = 2; x < numero / 2; x++) {
+                if (numero % x == 0)
+                    return false;
+            }
+            // Si no se pudo dividir por ninguno de los de arriba, sí es primo
+            return true;
+        }
+
+        //Verifica si numero es palindromo
+        function esPalidromo(numero) {
+            var reversa = "";
+            for (let i = numero.toString().length - 1; i >= 0; i--) {
+                reversa += numero.toString().charAt(i);
+            }
+            return numero == reversa;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var nota1 = parseInt(prompt("Dame nota1: "));
+        var nota2 = parseInt(prompt("Dame nota2: "));
+        var nota3 = parseInt(prompt("Dame nota3: "));
+        var promedio = (nota1 + nota2 + nota3) / 3;
+        if (promedio >= 7) {
+            document.write("Promocionado");
+        } else if (promedio >= 4 && promedio < 7) {
+            document.write("Regular");
+        }else {
+            document.write("Suspenso");
+        }
+    </script>
+</body>
+
+</html>

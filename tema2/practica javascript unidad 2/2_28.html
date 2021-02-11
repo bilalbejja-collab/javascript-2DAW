@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_28</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var cont = 1;
+        var numero = parseInt(prompt("Dame el numero " + cont + ": "));
+        var pares = 0, impares = 0;
+
+        while (cont < 20) {
+            cont++;
+            if (numero % 2 == 0)
+                pares++;
+            else
+                impares++;
+            numero = parseInt(prompt("Dame el numero " + cont + ": "));
+        }
+        document.write("Has introducido: " +pares+ " números pares<br>")
+        document.write("Has introducido: " +impares+ " números impares")
+
+    </script>
+</body>
+
+</html>

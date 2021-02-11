@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_34</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var figura = prompt("Quieres calcular el area de (triangulo, rectangulo o circulo)? ");
+
+        function area(f) {
+            var figura = f.toLowerCase();
+            switch (figura) {
+                case "triangulo":
+                    var b = prompt("Dame base: ");
+                    var h = prompt("Dame altura: ");
+                    var area = 0;
+                    area = (b * h) / 2;
+                    document.write("El area del triángulo con b=" + b + "cm y h=" + h + "cm es: " + area + "cm2");
+                    break;
+                case "rectangulo":
+                    var b = prompt("Dame base: ");
+                    var h = prompt("Dame altura: ");
+                    var area = 0;
+                    area = b * h;
+                    document.write("El area del rectángulo con b=" + b + "cm y h=" + h + "cm es: " + area + "cm2");
+                    break;
+                case "circulo":
+                    var r = prompt("Dame radio: ");
+                    var area = 0;
+                    area = Math.PI * Math.pow(r, 2);
+                    document.write("El area del círculo con r=" + r + "cm es: " + area + "cm2");
+                    break;
+                default:
+                    document.write("FIGURA INVÁLIDA");
+                    break;
+            }
+        }
+
+        area(figura);
+    </script>
+</body>
+
+</html>

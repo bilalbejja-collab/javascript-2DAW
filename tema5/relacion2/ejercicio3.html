@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ejercicio 3. Mover imágenes</title>
+	<script>
+		function moverFigura() {
+			var lienzos = document.getElementsByClassName("lienzo");
+			for (var i = 0; i < lienzos.length; i++) {
+				// A var id vamos a asignar el id del elemento donde pinchamos
+				var id = "";
+				// A var varHtml vamos a asignar el html que lleva el elemento pinchado
+				var varHtml = "";
+				lienzos[i].onclick = function () { 
+					if (id == "") {
+						id = this.getAttribute("id");
+					} else {
+						varHtml = this.innerHTML;
+						this.innerHTML = document.getElementById(id).innerHTML;
+						document.getElementById(id).innerHTML = varHtml;
+						id = '';
+					}
+				}
+			}
+		}
+		
+		window.onload = function () {
+			moverFigura();
+		}
+	</script>
+	<style>
+		div#contenedor {
+			width: 620px;
+			background: azure;
+			border: 1px solid gold;
+			margin: 0 auto;
+			padding: 50px;
+			text-align: center;
+		}
+
+		div.lienzo {
+			width: 104px;
+			height: 164px;
+			border: 1px solid #666;
+			float: left;
+			margin: 5px;
+			padding: 3px;
+			border-radius: 5px;
+
+		}
+
+		.clearfix {
+			overflow: auto;
+		}
+
+		div.seleccionado {
+			border: 1px solid yellow;
+			background-color: deepskyblue;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor" class="clearfix">
+		<h1>Mover imagen</h1>
+		<div class="lienzo" id="foto1"></div>
+		<div class="lienzo" id="foto2"><img src="imagenes/1oros.png" alt=""></div>
+		<div class="lienzo" id="foto3"><img src="imagenes/1bastos.png" alt=""></div>
+		<div class="lienzo" id="foto4"><img src="imagenes/1copas.png" alt=""></div>
+		<div class="lienzo" id="foto5"></div>
+		<p><br>Haz clic para seleccionar la imagen que deseas intercambiar</p>
+	</div>
+</body>
+
+</html>

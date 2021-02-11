@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5Bilal</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //dibuja un pirámide con el caracter pasado como parámetro
+        function piramide(caracter, numero) {
+            for (let i = numero; i > 0; i--) {
+                for (let j = i; j > 0; j--) {
+                    document.write(caracter)
+                }
+                document.write("<br>");
+            }
+        }
+
+        //ejecucion del ejercicio
+        piramide("@", 4);
+    </script>
+</body>
+</html>

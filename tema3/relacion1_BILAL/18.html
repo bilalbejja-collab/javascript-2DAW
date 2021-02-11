@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio18</title>
+</head>
+
+<body>
+    <form method="post" action="" id="myfrm">
+        <fieldset>
+            <legend>Información personal:</legend>
+            Nombre:<br>
+            <input type="text" name="firstname">
+            <br> Apellidos:<br>
+            <input type="text" name="lastname">
+            <br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+    <p align="center">
+        <input type="button" onclick="myPrint('myfrm')" value="print">
+    </p>
+    <script>
+        function myPrint(myfrm) {
+            var datos = document.getElementById(myfrm);
+            nueva_window = window.open("");
+            nueva_window.document.write(datos.outerHTML);
+            nueva_window.print();
+            nueva_window.close();
+        }
+    </script>
+</body>
+
+</html>

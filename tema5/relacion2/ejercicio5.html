@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5. Tamaño de palabras </title>
+	<style>
+		div#contenedor {
+			width: 600px;
+			background: deepskyblue;
+			border: 1px solid gold;
+			margin: 0 auto;
+			padding: 20px 50px;
+		}
+
+		.clearfix {
+			overflow: auto;
+		}
+
+		textarea {
+			width: 100%;
+		}
+
+		div#result {
+			margin: 20px;
+			padding: 10px;
+			border: 3px solid #666;
+			color: deeppink;
+			background: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor" class="clearfix">
+		<h1>Buscador de palabras por tamaño</h1>
+		<textarea name="" id="texto" cols="50" rows="10"></textarea>
+		<br> Mínimo número de caracteres de la palabra >
+		<input type="number" id="tam" min="0" max="25" value="3">
+		<input type="button" id="buscar" value="Buscar">
+
+		<div id="result"></div>
+	</div>
+
+	<script>
+		function normalizar(texto) {
+			var result = texto.toLowerCase();
+			result = result.replace(/[\[(){}*+?^$-_,:;"\'&@.<>|]+/g, '');
+			return result;
+		}
+
+		window.onload = function () {
+			// Asignamos el evento al boton buscar
+			document.getElementById("buscar").addEventListener("click", function () {
+				let palabras = getPalabras(document.getElementById("texto").value);
+				let tam = document.getElementById("tam").value;
+
+				devolverPalabras(palabras, tam);
+			});
+
+			// Obtiene las palabras del textarea
+			function getPalabras(texto) {
+				let textoFiltrado = normalizar(texto);
+				return textoFiltrado.split(" ");
+			}
+
+			// Devuelve la longitud de una palabra 
+			function longitud(palabra) {
+				return palabra.length;
+			}
+
+			// Debuja en el textarea las palabras que complen los requisitos de longitud 
+			function devolverPalabras(palabras, tam) {
+				let words = new Array();
+				let salida = "";
+
+				palabras.forEach(palabra => {
+					if (longitud(palabra) > tam) {
+						words.push(palabra);
+					}
+				});
+
+				words.forEach(word => {
+					salida += word + " (" + longitud(word) + ")\n";
+				});
+
+				// Si no hay niguna palabra que cumple ese requísito saldrá un alert
+				return words.length > 0 ? document.getElementById("result").innerText = salida : alert("No hay ningúna palabra que cumple la condición !");
+			}
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio14</title>
+    <style>
+        li {
+            list-style: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="add_letra()">Añadir letra</button>
+    <ul id="lista">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+    </ul>
+    <script>
+        //Añade letra a la lista 
+        function add_letra() {
+            var ul = document.getElementById("lista");
+            var li = document.createElement("li");
+            var num_elementos = document.getElementsByTagName("li").length;
+            var ultima_letra = document.getElementsByTagName("li")[num_elementos - 1].innerHTML;
+            var ascii = ultima_letra.charCodeAt(0);
+            var siguiente_letra = String.fromCharCode(ascii + 1);
+
+            // si es letra lo añado si no no 
+            if (isLetter(siguiente_letra)) {
+                li.appendChild(document.createTextNode(siguiente_letra));
+                ul.appendChild(li);
+            }
+        }
+
+        //Verifica si es letra o no 
+        function isLetter(str) {
+            return str.match(/[a-z]/i) ? true : false;
+        } 
+
+
+        /*
+        var letras = "abcdefghijklmnñopqrstuvwxyz";
+		function anadir(){
+			
+			x = document.getElementsByTagName("li").length;
+
+			if (x<27){
+				var corte = letras.substr(x, 1);
+				var li=document.createElement("li");
+				var contenido=document.createTextNode(corte);
+				li.appendChild(contenido);
+				document.getElementById("lista").appendChild(li);
+
+			}
+			else{
+				alert("no sepuede añadir mas letras");
+			}
+        */
+    </script>
+</body>
+
+</html>

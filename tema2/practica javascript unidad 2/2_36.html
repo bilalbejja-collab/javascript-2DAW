@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_36</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var caracter = prompt("Dame carácter: ");
+        function cuentaVocales(caracter) {
+            caracter = caracter.toLowerCase();
+            var vocales = ['a', 'o', 'u', 'e', 'i'];
+            var caracteres = new Array();
+            var cont = 0;
+            while (caracter != '*') {
+
+                if (caracter == 'a' ||
+                    caracter == 'o' ||
+                    caracter == 'u' ||
+                    caracter == 'e' ||
+                    caracter == 'i') {
+                    cont++;
+                    caracteres.push(caracter);
+                }
+                caracter = prompt("Dame carácter: ");
+            }
+            document.write("(" + caracteres + ")")
+            document.write("<br>---------------------------------")
+            document.write("<br>Has introducido: " + cont + " vocales.")
+        }
+
+        cuentaVocales(caracter);
+    </script>
+</body>
+
+</html>

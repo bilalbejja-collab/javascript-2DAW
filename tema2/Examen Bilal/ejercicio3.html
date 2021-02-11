@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3Bilal</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var caracter = prompt("Dame un carácter: ");
+        var cadena = "";
+        var vocales = ['a', 'o', 'u', 'e', 'i'];
+        while (caracter != '*') {
+            //convierto el caracter a minuscula para que no me evite el programa las vocales mayusculas
+            caracter = caracter.toLowerCase();
+            if (vocales.indexOf(caracter) < 0) {
+                cadena += caracter;
+            }
+            caracter = prompt("Dame carácter: ");
+        }
+        document.write("Resultado para SMS: " + cadena)
+
+    </script>
+</body>
+
+</html>

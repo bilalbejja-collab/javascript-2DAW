@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let num1, num2, num3, num4;
+        //compruebo que los 4 numeros no pueden ser letra ni ningun otro carácter
+        do {
+            num1 = prompt("Dame numero1: ");
+            num2 = prompt("Dame numero2: ");
+            num3 = prompt("Dame numero3: ");
+            num4 = prompt("Dame numero4: ");
+        } while (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4));
+        
+        //ejecuto mi función pasandole los 4 números
+        mi_funcion(num1, num2, num3, num4);
+
+        function mi_funcion(num1, num2, num3, num4) {
+            let mayor = Math.max(num1, num2, num3, num4);
+            let minimo = Math.min(num1, num2, num3, num4);
+            document.write("a) El máximo de los números pasados: " + mayor);
+            document.write("<br>a) El mínimo de los números pasados: " + minimo);
+        }
+    </script>
+</body>
+
+</html>

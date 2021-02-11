@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44</title>
+</head>
+
+<body>
+    <script>
+        var cant = 1;
+        var gastos = 0;
+        var grupo1 = 0;
+        var grupo2 = 0;
+        while (cant <= 5) {
+            var sueldo = parseInt(prompt("Dame nomina" + cant + ": "));
+            if (sueldo > 100 && sueldo < 300) {
+                grupo1++;
+            } else if (sueldo > 300) {
+                grupo2++;
+            }
+            gastos += sueldo;
+            cant++;
+        }
+        document.write("Hay " + grupo1 + " empleados cobran entre 100 y 300");
+        document.write("<br>Hay " + grupo2 + " empleados cobran más de 300");
+        document.write("<br>La empresa gasta "+gastos+"€");
+</script>
+</body>
+
+</html>

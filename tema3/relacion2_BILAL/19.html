@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio19</title>
+    <style> 
+        div {
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin-left: 70px;
+            margin-right: 80px;
+            margin-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function cambiaColor(element) {
+            document.bgColor = element.id;
+            document.getElementById(element.id).style.backgroundColor = "white";
+        }
+        function restaurarColor(element) {
+            document.bgColor = "white";
+            document.getElementById(element.id).style.backgroundColor = element.id;
+        }
+    </script>
+    <div id="red" style="background-color: red;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+    <div id="green" style="background-color: green;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+    <div id="blue" style="background-color: blue;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+    <div id="yellow" style="background-color: yellow;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+    </div>
+    <div id="black" style="background-color: black;" onmouseover="cambiaColor(this)" onmouseout="restaurarColor(this)">
+</body>
+
+</html>

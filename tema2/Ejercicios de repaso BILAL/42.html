@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42</title>
+</head>
+
+<body>
+    <script>
+        var cant = 1;
+        var mayor_que_siete = 0;
+        var menor_que_siete = 0;
+        while (cant <= 5) {
+            var nota = parseInt(prompt("Dame nota" + cant + ": "));
+            if (nota >= 7) {
+                mayor_que_siete++;
+            } else {
+                menor_que_siete++;
+            }
+            cant++;
+        }
+        document.write(mayor_que_siete + " tienen notas mayores o iguales a 7<br>");
+        document.write(menor_que_siete + " tienen notas menores que 7");
+
+    </script>
+</body>
+
+</html>

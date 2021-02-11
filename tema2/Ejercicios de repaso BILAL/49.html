@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>49</title>
+</head>
+
+<body>
+    <script>
+        var suma = 0;
+        while (num != 9999) {
+            var num = parseInt(prompt("Dame numero: "));
+            suma += num;
+        }
+        suma -= 9999;
+        if (suma > 0) {
+            alert("El valor acumulado es " + suma + "\nMayor a cero");
+        } else if (suma < 0) {
+            alert("El valor acumulado es " + suma + "\nMenor a cero");
+        } else {
+            alert("El valor acumulado es " + suma + "\nEs a cero");
+        }
+    </script>
+</body>
+
+</html>

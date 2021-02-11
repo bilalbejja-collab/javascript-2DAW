@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47</title>
+</head>
+
+<body>
+    <script>
+        var cant = 1;
+        var cont_pares = 0;
+        var cont_impares = 0;
+        while (cant <= 5) {
+            var num = parseInt(prompt("Dame numero" + cant + ": "));
+            if (es_par(num)) {
+                cont_pares++;
+            } else {
+                cont_impares++;
+            }
+            cant++;
+        }
+        document.write(cont_pares + " fueron pares<br>");
+        document.write(cont_impares + " fueron impares");
+
+        function es_par(numero) {
+            return numero % 2 == 0;
+        }
+    </script>
+</body>
+
+</html>

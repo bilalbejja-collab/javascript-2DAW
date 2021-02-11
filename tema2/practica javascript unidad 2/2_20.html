@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_20</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var numero = parseInt(prompt("Numero: "));
+        var divisores = new Array();
+        var i = 0;
+        while (i < numero) {
+            i++;
+            if (numero % i == 0) {
+                divisores.push(i);
+            }
+        }
+        document.write(numero +" -> sus divisores son: "+ divisores);
+
+    </script>
+</body>
+
+</html>
